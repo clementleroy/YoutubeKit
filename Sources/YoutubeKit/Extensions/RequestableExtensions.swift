@@ -1,9 +1,4 @@
-//
-//  RequestableExtensions.swift
-//  YoutubeKit
-//
-//  Created by Ryo Ishikawa on 12/30/2017
-//
+import Foundation
 
 extension Requestable {
     
@@ -30,7 +25,7 @@ extension Requestable {
     public var httpBody: Data? {
         return nil
     }
-
+    
     public func makeURLRequest() -> URLRequest {
         let url = baseURL.appendingPathComponent(path)
         var urlRequest = URLRequest(url: url)
@@ -53,7 +48,7 @@ extension Requestable {
         guard var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
             return urlRequest
         }
-
+        
         var keyParams: [String: Any] = queryParameters
         
         if !isAuthorizedRequest {
