@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "YoutubeKit",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v12)
     ],
     products: [
         .library(
@@ -15,7 +15,8 @@ let package = Package(
     targets: [
         .target(
             name: "YoutubeKit",
-            dependencies: [])
+            dependencies: [],
+            resources: [.process("player.html")])
     ],
     swiftLanguageVersions: [.v5]
 )
